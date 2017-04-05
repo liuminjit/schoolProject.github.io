@@ -1,0 +1,2 @@
+# schoolProject.github.io
+schoolProject
