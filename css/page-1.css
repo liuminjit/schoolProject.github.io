@@ -1,0 +1,93 @@
+		.log{
+			 font-size: 2em;
+			 left: 7%;
+			 top: 30%;
+			 position: relative;
+			 color: #FFF;
+			 font-weight: 600;
+		}
+		.log2{
+			 font-size: 1em;
+			 left: 7%;
+			 top: 32%;
+			 position: relative;
+			 color: #FFF;
+			 font-weight: 600;
+			 line-height: 25px;
+		}
+		.log3{
+			 font-size: 0.3em;
+			 left: 7%;
+			 top: 32%;
+			 position: relative;
+			 color: #FFF;
+			 font-weight: 600;
+			 line-height: 25px;
+		}
+		.log4{
+			 font-size: 1em;
+			 left: 7%;
+			 top: 32%;
+			 position: relative;
+			 color: #FFF;
+			 font-weight: 100;
+			 line-height: 28px;
+		}
+		.yuan{
+			 border: 2px solid #fff;
+			 left: 6%;
+			 top: 34%;
+			 position: relative;
+			 border-radius: 50%;
+			 width: 35px;
+			 height: 35px;
+			 color: #fff;
+			 font-size: 1.2em;
+			 padding: 25px;
+		}
+		.yuan1{
+			width: 100px;
+			position: relative;
+			left: -15px;
+			top: -5px;
+			font-size: 0.8em;
+		}
+		.yuan2{
+			left: -15px;
+			top: -18px;
+			position: relative;
+		}
+		.yuan2 span{
+			position: relative;
+			top: 0px;
+			left: 3px;
+			font-size: 2em;
+		}
+		.yuan3{
+			position: relative;
+			left: 35px;
+			top: -70px;
+			font-size: 2em;
+		}
+		.arrow{
+			display: block;
+			width: 24px;
+			height: 18px;
+			background:url(../imgs/icon.png);
+			background-size: 68px;
+			background-position: 0 -254px;
+			position: absolute;
+			left: 47%;
+			bottom: 2%;
+			-webkit-animation:up 1s ease-in-out infinite;
+		}
+		@-webkit-keyframes up {
+			50% {
+				-webkit-transform: translate( 0 , -20px);
+			}
+		}
+		@-webkit-keyframes up2 {
+			50% {
+				-webkit-transform: translate( 0 , -20px);
+			}
+		}

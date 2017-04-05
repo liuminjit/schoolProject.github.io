@@ -1,0 +1,110 @@
+.conclusion{
+			width: 68px;
+			height: 53px;
+			background: url(../imgs/icon.png)no-repeat;
+			background-size: 68px;
+			position: absolute;
+			left: 10px;
+			top: 10px;
+		}
+		.component_parent{
+			position: relative;
+			top:0px;
+			left: 0px;
+		}
+
+		.num01{
+			display: block;
+			width: 21px;
+			height: 35px;
+			background: url(../imgs/icon.png);
+			background-size: 68px;
+			position: absolute;
+			top:8px;
+			right: 5px;
+			background-position: -1px -64px;
+		}
+
+		.num02{
+			display: block;
+			width: 21px;
+			height: 35px;
+			background: url(../imgs/icon.png);
+			background-size: 68px;
+			position: absolute;
+			top:8px;
+			right: 5px;
+			background-position: -32px -64px;
+		}
+
+		.num03{
+			display: block;
+			width: 21px;
+			height: 35px;
+			background: url(../imgs/icon.png);
+			background-size: 68px;
+			position: absolute;
+			top:8px;
+			right: 5px;
+			background-position: -1px -111px;
+		}
+
+		.num04{
+			display: block;
+			width: 21px;
+			height: 35px;
+			background: url(../imgs/icon.png);
+			background-size: 68px;
+			position: absolute;
+			top:8px;
+			right: 5px;
+			background-position: -32px -111px;
+		}
+
+		.num05{
+			display: block;
+			width: 21px;
+			height: 35px;
+			background: url(../imgs/icon.png);
+			background-size: 68px;
+			position: absolute;
+			top:8px;
+			right: 5px;
+			background-position: -1px -158px;
+		}
+
+		.num06{
+			display: block;
+			width: 21px;
+			height: 35px;
+			background: url(../imgs/icon.png);
+			background-size: 68px;
+			position: absolute;
+			top:8px;
+			right: 5px;
+			background-position: -32px -158px;
+		}
+
+		.num07{
+			display: block;
+			width: 21px;
+			height: 35px;
+			background: url(../imgs/icon.png);
+			background-size: 68px;
+			position: absolute;
+			top:8px;
+			right: 5px;
+			background-position: -1px -205px;
+		}
+
+		.num08{
+			display: block;
+			width: 21px;
+			height: 35px;
+			background: url(../imgs/icon.png);
+			background-size: 68px;
+			position: absolute;
+			top:8px;
+			right: 5px;
+			background-position: -32px -205px;
+		}
