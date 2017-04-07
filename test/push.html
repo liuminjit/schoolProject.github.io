@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8"/>
+	<meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1">
+	<title>珠海房价数据报告</title>
+	<style type="text/css">
+
+		body{
+			margin: 0;
+			padding: 0;
+		}
+		.desc{
+			 display: none;
+			 font-size: 3em;
+			 text-align: center;
+			 top: 15%;
+			 position: relative;
+			 color: #FFF;
+			 font-weight: 600;
+		}
+		.icon_arrow{
+			display: block;
+			width: 24px;
+			height: 16px;
+			background: url(../imgs/arrow.png);
+			background-size: 24px;
+			position: relative;
+			left: 47%;
+			-webkit-animation:up2 1s ease-in-out infinite;
+		}
+		.arrow_parent{
+			position:relative; top: 32%;
+		}
+		.arrow_Cparent{
+			position:relative; top: 25%;
+		}
+		.arrow_Cparent1{
+			position:relative; top: 40%;
+		}
+		.show{
+			color: #fff;
+			position: relative;
+			top: 16%;
+			left: 20%;
+			display: none;
+		}
+		#Subtitle {
+			font-size: 2em;
+			font-weight: bold;			
+			top: 15%;
+			position: relative;
+		    -webkit-animation-duration: 1s;    
+		    -webkit-animation-delay: 0.1s;    
+		    /*animate-iteration-count: 2;    //动画执行次数*/
+		}
+		#PaperText{			
+			top: 17%;
+			position: relative;
+			font-size: 2em;
+			-webkit-animation-duration: 1s;    
+		    -webkit-animation-delay: 0.3s;   
+		}
+		#PaperText1{
+			margin:0 auto;
+			top: 40%;
+			font-size: 1.5em;
+			-webkit-animation-duration: 1s;    
+		    -webkit-animation-delay: 0.3s;   
+		}
+		#lastWord{
+			left: 21%;
+			top: 25%;
+			font-size: 1.5em;
+			-webkit-animation-duration: 1s;    
+		    -webkit-animation-delay: 0.5s;   
+		}
+		.picture{
+			position: relative;
+			width:360px;
+			height: 300px;
+			left:2%;
+			top: 25%;
+			border:0px solid #fff;
+			-webkit-animation-duration: 1s;    
+		    -webkit-animation-delay: 0.8s;   
+		}
+		/*按钮*/
+		.picture_choose{
+			position: relative;
+			width:360px;
+			height: 300px;
+			left:2%;
+			top: 20%;
+			border:0px solid #fff;
+			-webkit-animation-duration: 1s;    
+		    -webkit-animation-delay: 0.8s;   
+		}
+		.button_group{
+			-webkit-animation-duration: 1s;    
+		    -webkit-animation-delay: 1s;   
+		}
+		.button_choose{
+			border: 1px solid #FF5561;
+			border-radius: 15px;
+			width: 35px;
+			text-align: center;
+			top: 40px;
+			position: relative;
+			float: left;
+			margin: 0 10px;
+			color: #fff;
+			background: #FF5561;
+			z-index: 2;
+		}
+
+		.form_input{
+		  	width:250px;
+	  		margin:20px auto;
+		}
+		.form_input2{
+			width:140px;
+			margin: 0 auto;
+			left: 10%;
+		}
+		input{
+			  box-sizing: border-box;
+			  text-align:center;
+			  font-size:1.4em;
+			  line-height:2em;
+			  border-radius:4px;
+			  border:1px solid #c8cccf;
+			  color:#6a6f77;
+			  -web-kit-appearance:none;
+			  -moz-appearance: none;
+			  display:block;
+			  outline:0;
+			  padding:0 1em;
+			  text-decoration:none;
+			  width:100%;
+		}
+
+	</style>
+	<link rel="stylesheet" type="text/css" href="../css/page-1.css">
+	<link rel="stylesheet" type="text/css" href="../css/number.css">
+	<link rel="stylesheet" type="text/css" href="../css/animate.min.css">
+	<script type="text/javascript" src="../js/lib/jquery.js"></script>
+	<script type="text/javascript" src="../js/lib/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="../js/lib/jquery.fullPage.js"></script>
+	<script type="text/javascript">
+			
+	$(function(){
+		$('#h5').fullpage({
+			onLeave:function(index, nextIndex, direction){
+				$('#h5').find('.page').eq(index-1).trigger('onLeave');
+			},
+			afterLoad:function(anchorLine, index){
+				$('#h5').find('.page').eq(index-1).trigger('onLoad');
+			},
+		});
+
+		$('.page').on('onLeave',function(){
+			// console.log($(this).attr('id'),'==>>','onLeave');
+			$(this).find('.component').trigger('onLeave');
+			getValue();
+			pushValue();
+			type = $("#push_type")[0].value;
+			append();
+		})
+		$('.page').on('onLoad',function(){
+			// console.log($(this))
+			// console.log($(this).attr('id'),'==>>','onLoad');
+			$(this).find('.component').trigger('onLoad');
+
+			if($(this).find('#page_1').length == 1 ){
+				setTimeout("myChart_1.setOption(option_1)",1000);
+			}
+			if($(this).find('#page_7').length == 1 ){
+				setTimeout("myChartTest()",1000);
+				setTimeout("myChart_7.setOption(option_71)",1000);
+			}
+		})
+
+		$('.component').on('onLoad',function(){
+			$(this).fadeIn();
+			$('.desc').addClass('animated fadeInUp');
+			$('.show').addClass('animated fadeInUp');
+			return false;
+		})
+		$('.component').on('onLeave',function(){
+			$(this).fadeOut();
+			return false;
+		})
+
+
+	});
+
+	</script>
+	<!-- 图表内容 -->
+	<script type="text/javascript" src="../js/echarts.min.js"></script>
+</head>
+	<body>
+	<div id="h5">
+		<div class="page section" id="page-1" style="background-image: url(../imgs/bg0.jpg);background-size: cover;">
+			<div class="component log">自定义<br>图文数据报告<br></div>
+			<div class="component log2">Graphic data report <br>of housing prices <br>in Zhuhai</div>
+			<div class="component log3">——————————</div>
+			<div class="component log4">BY 詹 昶 晨</div>
+			<div class="component yuan">
+				<div class="yuan1">第一期</div>
+				<div class="yuan2">VOL<span>.</span></div>
+				<div class="yuan3">2</div>
+			</div>
+			<div class="arrow"></div>
+		</div> 
+
+		<div class="page section" id="page-2" style="background-image: url(../imgs/bg10.jpg);background-size: cover;">
+				<form action="" method="get" style="position: relative;top: 30%;">
+				    <div class="input_control">
+				        <input type="text" id="push_1" class="form_input" placeholder="输入标题"/>
+				    </div>
+				    <div class="input_control">
+				        <input type="text" id="push_2" class="form_input" placeholder="输入副标题" />
+				    </div>
+				    <div class="input_control">
+				        <input type="text" id="push_3" class="form_input" placeholder="输入描述"/>
+				    </div>
+				</form>
+				<div class="component show" id="PaperText1">NEXT 输入数据</div>
+			
+			<div class="arrow_Cparent1">
+				<div class="arrow1"></div>
+			</div>
+		</div> 
+		
+		<div class="page section" id="page-3" style="background-image: url(../imgs/bg11.jpg);background-size: cover;">
+				<form action="" method="get" style="position: relative;top: 30%;">
+				    <div class="input_control">
+				        <input type="text" id="push_type" class="form_input"  placeholder="数据类型"/>
+				    </div>
+				    <div class="input_control">
+				        <input type="text" class="form_input2" placeholder="名称" style="position: relative;float: left;" />
+				        <input type="text" class="form_input2" placeholder="值"/>
+				    </div>
+				    <div class="input_control" style="margin: 10px 0px">
+				        <input type="text" class="form_input2" placeholder="名称" style="position: relative;float: left;" />
+				        <input type="text" class="form_input2" placeholder="值"/>
+				    </div>
+
+				    <div class="input_control" style="margin: 10px 0px">
+				        <input type="text" class="form_input2" placeholder="名称" style="position: relative;float: left;" />
+				        <input type="text" class="form_input2" placeholder="值"/>
+				    </div>
+				</form>
+				<div class="component show" id="PaperText1">NEXT 生成图表</div>
+			
+			<div class="arrow_Cparent1">
+				<div class="arrow1"></div>
+			</div>
+		</div> 
+
+		<div class="page section" id="page-4" style="background-image: url(../imgs/bg13.jpg);background-size: cover;">
+			<div class="component_parent">
+				<div class="component conclusion">
+					<b class="num03"></b>
+				</div>
+			</div>
+
+			<div class="component desc" id="real_title">成交排行</div>
+			<div class="component" id="Subtitle" style="text-align: center;display: none;color: #fff;">成交均价 TOP 10</div>
+			<div class="component" id="PaperText" style="text-align: center;display: none;color: #fff;">按7天、30天、以及2月统计数据</div>
+			<div class="component show picture_choose " id="page_7" style="z-index: 1;"></div>
+			<div class="arrow_Cparent">
+				<div class="icon_arrow"></div>
+			</div>
+		</div>
+
+		<div class="page section" id="page-3" style="background-image: url(../imgs/bg9.jpg);background-size: cover;">
+			<div class="component desc">感谢观看</div>
+			<div class="component show" id="Subtitle">感谢在场 老师同学</div>
+			<div class="component show" id="PaperText">设计目标： 
+			<Br><span style="font-size: 25px;">让数据不仅仅是图片而已</span>
+			<Br><span style="font-size: 25px;">实现数据可视化</span>
+			</div>
+			<div class="component show" id="lastWord">恳请老师 批评 指正</div>
+		</div>
+	</div>
+
+	
+	<script type="text/javascript" src="../js/picture_72.js"></script>
+	<script type="text/javascript" src="../js/getValue.js"></script>
+
+	</body>
+</html>

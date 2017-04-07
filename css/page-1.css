@@ -81,6 +81,18 @@
 			bottom: 2%;
 			-webkit-animation:up 1s ease-in-out infinite;
 		}
+		.arrow1{
+			display: block;
+			width: 24px;
+			height: 18px;
+			background:url(../imgs/icon.png);
+			background-size: 68px;
+			background-position: 0 -254px;
+			position: absolute;
+			left: 72%;
+			bottom: 2%;
+			-webkit-animation:up 1s ease-in-out infinite;
+		}
 		@-webkit-keyframes up {
 			50% {
 				-webkit-transform: translate( 0 , -20px);

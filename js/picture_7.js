@@ -1,7 +1,7 @@
 
         // 基于准备好的dom，初始化echarts实例
     var myChart_7 = echarts.init(document.getElementById('page_7'));
-
+    
         // 指定图表的配置项和数据
     var option_71 = {
             
@@ -37,7 +37,7 @@
             series: [
                 {
                     name:'成交均价Top10',
-                    type:'bar',
+                    type: 'bar',
                     data:[42.754, 42.677, 42.371, 41.907, 39.895, 39.117, 37.794, 37.470, 36.034, 32.452],
                     itemStyle: {
                         normal: {
