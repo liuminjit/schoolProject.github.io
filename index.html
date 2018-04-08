@@ -34,15 +34,11 @@
   crossorigin="anonymous"></script>
 <script>
   window.onload = function () {
-    key = 0;
+    key = true;
     window.operation.setTitle('横屏测试1')
   }
   var test = function () {
-    if (key === 0) {
-      key = 1;
-    } else if (key === 1) {
-      key = 0;
-    }
+    key = !key;
     document.getElementById('showValue').innerHTML = key;
     window.operation.isRatation(key);
   }
