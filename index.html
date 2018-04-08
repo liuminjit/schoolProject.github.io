@@ -9,11 +9,19 @@
     .img-fluid {
       width: 100%;
     }
+
+    .close {
+      margin: 10px;
+    }
   </style>
 </head>
 
 <body>
+  <button type="button" class="close" aria-label="Close">
+    <span onclick="close()" aria-hidden="true">&times;</span>
+  </button>
   <h1 onclick="test()">Hello, world!</h1>
+  <h1 onclick="closePage()">Hello, world!</h1>
   <h1 id="showValue"></h1>
 
   <img src="http://img.hb.aicdn.com/3442248e7b67b8517cab23016eb71dd04c5f221836951-8WORcH_fw658" class="img-fluid" alt="Responsive image">
@@ -27,6 +35,7 @@
 <script>
   window.onload = function () {
     key = false;
+    window.operation.setTitle('横屏测试')
   }
   var test = function () {
     console.log('点击');
@@ -38,6 +47,11 @@
     }
     document.getElementById('showValue').innerHTML = key;
     window.operation.isRatation(key);
+  }
+
+  var closePage = function () {
+    console.log('close');
+    window.close();
   }
 </script>
 
