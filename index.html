@@ -9,16 +9,11 @@
     .img-fluid {
       width: 100%;
     }
-
-    .close {
-      margin: 10px;
-    }
   </style>
 </head>
 
 <body>
-  <h1 onclick="test()">Hello, world!if判断</h1>
-  <h1 id="showValue"></h1>
+  <h1 onclick="test()">Hello, world!first</h1>
   <img src="http://img.hb.aicdn.com/3442248e7b67b8517cab23016eb71dd04c5f221836951-8WORcH_fw658" class="img-fluid" alt="Responsive image">
 </body>
 <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
@@ -29,23 +24,16 @@
   crossorigin="anonymous"></script>
 <script>
   window.onload = function () {
-    temp = false;
-    document.getElementById('showValue').innerHTML = temp;
+    key = false;
   }
-
   var test = function () {
-    if (temp) {
-      temp = false;
-    } else {
-      temp = true;
+    console.log('点击');
+    console.log(key);
+    if (key) {
+      key = false;
+    } else if (!key) {
+      key = true;
     }
-    document.getElementById('showValue').innerHTML = temp;
-    console.log(temp);
-    passkey(temp);
-    alert(temp);
-  }
-
-  var passkey = function (key) {
     window.operation.isRatation(key);
   }
 </script>
