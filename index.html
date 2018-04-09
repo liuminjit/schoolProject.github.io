@@ -29,19 +29,20 @@
   crossorigin="anonymous"></script>
 <script>
   window.onload = function () {
-    key = [true, false];
-    i = 0;
-    document.getElementById('showValue').innerHTML = key;
+    temp = false;
+    document.getElementById('showValue').innerHTML = temp;
   }
 
   var test = function () {
-    i++;
-    number = i % 2;
-    alert(number);
-    document.getElementById('showValue').innerHTML = key[number];
-    console.log(key[number]);
-    alert(key[number]);
-    passkey(key[number]);
+    if (temp) {
+      temp = false;
+    } else {
+      temp = true;
+    }
+    document.getElementById('showValue').innerHTML = temp;
+    console.log(temp);
+    passkey(temp);
+    alert(temp);
   }
 
   var passkey = function (key) {
