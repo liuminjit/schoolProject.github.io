@@ -40,11 +40,15 @@
   var test = function () {
     key = !key;
     document.getElementById('showValue').innerHTML = key;
+    alert(key);
+    passkey(key);
+  }
+
+  var passkey = function (key) {
     window.operation.isRatation(key);
   }
 
   var closePage = function () {
-    console.log('close');
     window.close();
   }
 </script>
