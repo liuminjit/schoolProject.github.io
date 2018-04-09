@@ -2,43 +2,61 @@
 <meta charset="utf-8">
 
 <head>
-  <title>测试页面</title>
-  <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-    crossorigin="anonymous">
-  <style>
-    .img-fluid {
-      width: 100%;
-    }
-  </style>
+    <title>测试页面</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <style>
+        .img-fluid {
+            width: 100%;
+        }
+
+        .close {
+            margin: 10px;
+        }
+    </style>
 </head>
 
 <body>
-  <h1 onclick="test()">Hello, world!444</h1>
-  <h1 id="showValue"></h1>
-
-  <img src="http://img.hb.aicdn.com/3442248e7b67b8517cab23016eb71dd04c5f221836951-8WORcH_fw658" class="img-fluid" alt="Responsive image">
+    <button type="button" class="close" aria-label="Close">
+        <span onclick="closePage()" aria-hidden="true">&times;</span>
+    </button>
+    <h1 onclick="changeMode()">点击更换锁屏设定</h1>
+    <h1 id="showValue"></h1>
+    <div onclick="changeName()"> 点击更改名字</div>
+    <img src="http://img.hb.aicdn.com/3442248e7b67b8517cab23016eb71dd04c5f221836951-8WORcH_fw658" class="img-fluid" alt="Responsive image">
 </body>
 <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-  crossorigin="anonymous"></script>
+    crossorigin="anonymous"></script>
 <script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-  crossorigin="anonymous"></script>
+    crossorigin="anonymous"></script>
 <script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-  crossorigin="anonymous"></script>
+    crossorigin="anonymous"></script>
 <script>
-  window.onload = function () {
-    keyName = false;
-    document.getElementById('showValue').innerHTML = keyName;
-  }
-  var test = function () {
-    if (keyName) {
-      keyName = false;
-    } else {
-      keyName = true;
+    window.onload = function () {
+        keyArray = [true, false];
+        i = 1;
+        document.getElementById('showValue').innerHTML = keyArray[1];
+        window.operation.setTitle('横屏修改页面')
     }
-    document.getElementById('showValue').innerHTML = keyName;
-    window.operation.isRatation(keyName);
-    alert(keyName);
-  }
+    var changeMode = function () {
+        i++;
+        number = i % 2;
+        document.getElementById('showValue').innerHTML = keyArray[number];
+        passkey(keyArray[number]);
+    }
+    var passkey = function (key) {
+        window.operation.isRatation(key);
+    }
+    var changeName = function () {
+        let name = '横屏测试' + keyArray[number]
+        window.operation.setTitle(name);
+        return true;
+    }
+    var closePage = function () {
+        window.operation.closeWebExplorer();
+        return true;
+    }
 </script>
 
 </html>
