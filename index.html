@@ -23,7 +23,7 @@
   <h1 onclick="test()">Hello, world!传对象</h1>
 
   <h1 id="showValue"></h1>
-  <div onclick="changeName"> 用来改名的按钮</div>
+  <div onclick="changeName()"> 用来改名的按钮</div>
   <img src="http://img.hb.aicdn.com/3442248e7b67b8517cab23016eb71dd04c5f221836951-8WORcH_fw658" class="img-fluid" alt="Responsive image">
 </body>
 <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
@@ -43,6 +43,7 @@
   var test = function () {
     i++;
     number = i % 2;
+    alert(number);
     document.getElementById('showValue').innerHTML = key[number];
     let alertValue = '' + key[number] + '    ' + i;
     console.log(alertValue);
