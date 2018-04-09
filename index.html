@@ -34,7 +34,7 @@
   crossorigin="anonymous"></script>
 <script>
   window.onload = function () {
-    key = ['true', 'false'];
+    key = [true, false];
     i = 0;
     document.getElementById('showValue').innerHTML = key;
     window.operation.setTitle('横屏测试1')
@@ -48,7 +48,7 @@
     let alertValue = key[number] + '    ' + i;
     console.log(alertValue);
     alert(alertValue);
-    passkey(key[number]);
+    // passkey(key[number]);
   }
 
   var passkey = function (key) {
