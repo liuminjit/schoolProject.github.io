@@ -13,7 +13,7 @@
 </head>
 
 <body>
-  <h1 onclick="test()">Hello, world!333</h1>
+  <h1 onclick="test()">Hello, world!444</h1>
   <h1 id="showValue"></h1>
 
   <img src="http://img.hb.aicdn.com/3442248e7b67b8517cab23016eb71dd04c5f221836951-8WORcH_fw658" class="img-fluid" alt="Responsive image">
@@ -26,18 +26,18 @@
   crossorigin="anonymous"></script>
 <script>
   window.onload = function () {
-    key = false;
-    document.getElementById('showValue').innerHTML = key;
+    keyName = false;
+    document.getElementById('showValue').innerHTML = keyName;
   }
   var test = function () {
-    if (key) {
-      key = false;
+    if (keyName) {
+      keyName = false;
     } else {
-      key = true;
+      keyName = true;
     }
-    document.getElementById('showValue').innerHTML = key;
-    window.operation.isRatation(key);
-    alert(key);
+    document.getElementById('showValue').innerHTML = keyName;
+    window.operation.isRatation(keyName);
+    alert(keyName);
   }
 </script>
 
