@@ -20,7 +20,7 @@
   <button type="button" class="close" aria-label="Close">
     <span onclick="closePage()" aria-hidden="true">&times;</span>
   </button>
-  <h1 onclick="test()">Hello, world!</h1>
+  <h1 onclick="test()">Hello, world!传对象</h1>
   <h1 id="showValue"></h1>
 
   <img src="http://img.hb.aicdn.com/3442248e7b67b8517cab23016eb71dd04c5f221836951-8WORcH_fw658" class="img-fluid" alt="Responsive image">
@@ -45,7 +45,11 @@
   }
 
   var passkey = function (key) {
-    window.operation.isRatation(key);
+    let key2 = {
+      'key': key
+    }
+    console.log(key2)
+    window.operation.isRatation(key2);
   }
 
   var closePage = function () {
