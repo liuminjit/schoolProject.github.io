@@ -17,13 +17,8 @@
 </head>
 
 <body>
-  <button type="button" class="close" aria-label="Close">
-    <span onclick="closePage()" aria-hidden="true">&times;</span>
-  </button>
   <h1 onclick="test()">Hello, world!</h1>
-
   <h1 id="showValue"></h1>
-  <div onclick="changeName()"> 用来改名的按钮</div>
   <img src="http://img.hb.aicdn.com/3442248e7b67b8517cab23016eb71dd04c5f221836951-8WORcH_fw658" class="img-fluid" alt="Responsive image">
 </body>
 <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
@@ -37,7 +32,6 @@
     key = [true, false];
     i = 0;
     document.getElementById('showValue').innerHTML = key;
-    window.operation.setTitle('横屏测试1')
   }
 
   var test = function () {
@@ -45,21 +39,8 @@
     number = i % 2;
     alert(number);
     document.getElementById('showValue').innerHTML = key[number];
-    let alertValue = key[number] + '    ' + i;
-    console.log(alertValue);
-    alert(alertValue);
-  }
-
-  var changeName = function () {
-    alert('改名');
-    let name = '横屏测试' + key[number]
-    window.operation.setTitle(name);
-    return true;
-  }
-  var closePage = function () {
-    alert('关闭页面触发window.close');
-    window.operation.closeWebExplorer();
-    return true;
+    console.log(key[number]);
+    alert(key[number]);
   }
 </script>
 
