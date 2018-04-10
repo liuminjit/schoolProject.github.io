@@ -15,16 +15,43 @@
             margin: 10px;
         }
     </style>
+    <script>
+        window.onload = function () {
+            keyArray = [true, false];
+            i = 1;
+            titleName = '横屏测试';
+            document.getElementById('showValue').innerHTML = keyArray[1];
+            window.operation.setTitle('横屏修改页面')
+        }
+        var changeMode = function () {
+            i++;
+            number = i % 2;
+            document.getElementById('showValue').innerHTML = keyArray[number];
+            passkey(keyArray[number]);
+        }
+        var passkey = function (key) {
+            window.operation.isRatation(key);
+        }
+        var changeName = function () {
+            titleName = '横屏测试' + keyArray[number]
+            window.operation.setTitle(titleName);
+            return true;
+        }
+        var closePage = function () {
+            window.operation.closeWebExplorer();
+            return true;
+        }
+    </script>
 </head>
 
 <body>
     <button type="button" class="close" aria-label="Close">
         <span onclick="closePage()" aria-hidden="true">&times;</span>
     </button>
-    <h1 onclick="changeMode()">点击更换锁屏设定1</h1>
+    <h1 onclick="changeMode()">点击更换锁屏1</h1>
     <h1 id="showValue"></h1>
     <div onclick="changeName()"> 点击更改名字</div>
-    <img src="http://img.hb.aicdn.com/3442248e7b67b8517cab23016eb71dd04c5f221836951-8WORcH_fw658" class="img-fluid" alt="Responsive image">
+    <img src="https://im.ygsoft.com/webapp/restful/fileUploadController/showPic/5ab31534e4b04c79ad7d5fc1" class="img-fluid" alt="Responsive image">
 </body>
 <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
     crossorigin="anonymous"></script>
@@ -32,29 +59,6 @@
     crossorigin="anonymous"></script>
 <script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
     crossorigin="anonymous"></script>
-<script>
-    window.onload = function () {
-        keyArray = [true, false];
-        i = 1;
-        document.getElementById('showValue').innerHTML = keyArray[1];
-        window.operation.setTitle('横屏修改页面')
-    }
-    var changeMode = function () {
-        i++;
-        number = i % 2;
-        document.getElementById('showValue').innerHTML = keyArray[number];
-        passkey(keyArray[number]);
-    }
-    var passkey = function (key) {
-        window.operation.isRatation(key);
-    }
-    var changeName = function () {
-        let name = '横屏测试' + keyArray[number]
-        window.operation.setTitle(name);
-    }
-    var closePage = function () {
-        window.operation.closeWebExplorer();
-    }
-</script>
+
 
 </html>
