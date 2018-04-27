@@ -43,8 +43,10 @@
         }
         var changeLocalValue = function () {
             let key = localStorage.getItem('gear')
+            console.log(key);
+            console.log(!key);
             if (!key) {
-                localStorage.setItem('gear', true)
+                localStorage.setItem('gear', true);
             } else if (key) {
                 localStorage.setItem('gear', false);
             }
@@ -57,7 +59,7 @@
     <button type="button" class="close" aria-label="Close">
         <span onclick="closePage()" aria-hidden="true">&times;</span>
     </button>
-    <h1 onclick="changeMode()">点击更换锁屏2</h1>
+    <h1 onclick="changeMode()">点击更换锁屏3</h1>
     <h1 id="showValue"></h1>
     <div onclick="changeName()"> 点击更改名字</div>
     <div onclick="changeLocalValue()">点击设定锁屏值</div>
