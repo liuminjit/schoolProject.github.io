@@ -41,17 +41,6 @@
             window.operation.closeWebExplorer();
             return true;
         }
-        var changeLocalValue = function () {
-            let key = localStorage.getItem('gear')
-            console.log(key);
-            console.log(!key);
-            if (key === false || key === 'false') {
-                localStorage.setItem('gear', true);
-            } else if (key) {
-                localStorage.setItem('gear', false);
-            }
-            document.getElementById('localVal').innerHTML = localStorage.getItem('gear');
-        }
     </script>
 </head>
 
@@ -62,8 +51,6 @@
     <h1 onclick="changeMode()">点击更换锁屏4</h1>
     <h1 id="showValue"></h1>
     <div onclick="changeName()"> 点击更改名字</div>
-    <div onclick="changeLocalValue()">点击设定锁屏值</div>
-    <div id="localVal"></div>
     <img src="https://im.ygsoft.com/webapp/restful/fileUploadController/showPic/5ab31534e4b04c79ad7d5fc1" class="img-fluid" alt="Responsive image">
 </body>
 <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
